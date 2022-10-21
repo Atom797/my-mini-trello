@@ -1,0 +1,94 @@
+.content{
+    display: grid;
+    background-color: #ebecf0;
+    justify-self: center;
+    align-self: center;
+    grid-template-rows: 40px 1fr;
+    width: 50%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1%;
+    border-bottom: 1px solid rgb(216, 215, 215);
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+
+.itemList{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 80%;
+    height: 20%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.selectItemList{
+    justify-self: end;
+    margin-right: 10px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ebecf0;
+}
+
+.plusButton{
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    justify-self: end;
+    margin-right: 10px;
+    background-color: inherit;
+    border: none;
+    padding: 0;
+}
+
+.plusButton:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.plusButton:active{
+    border: 1px solid rgb(0, 4, 255);
+}
+
+.plusImg{
+    height: 100%;
+    width: 100%;
+}
+
+.windowForNewTask{
+    justify-items: start;
+    align-items: center;
+    width: 80%;
+    height: 20%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.buttonForAddTask{
+    align-content: center;
+    margin-left: 10px;
+    background-color: #0079bf;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.textareaForAddTask{
+    height: 70px;
+    width: 90%;
+    margin-left: 10px;
+    border-radius: 5px;
+}

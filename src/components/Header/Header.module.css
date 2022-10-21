@@ -1,0 +1,9 @@
+.header{
+    display: grid;
+    align-items: center;
+    background-color: #f1f5f7;
+}
+
+.icon{
+    height: 40px;
+}

@@ -1,0 +1,43 @@
+.content{
+    display: grid;
+    background-color: #ebecf0;
+    justify-self: center;
+    align-self: center;
+    grid-template-rows: 40px 1fr;
+    width: 50%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1%;
+    border-bottom: 1px solid rgb(216, 215, 215);
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.itemList{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 80%;
+    height: 20%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.selectItemList{
+    justify-self: end;
+    margin-right: 10px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ebecf0;
+}
