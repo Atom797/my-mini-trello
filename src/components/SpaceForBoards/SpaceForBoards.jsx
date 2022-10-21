@@ -1,8 +1,5 @@
-import BoardToDo from '../BoardToDo/BoardToDo';
 import style from './SpaceForBoards.module.css'
 import { useEffect, useState } from 'react'
-import BoardInProgress from '../BoardInProgress/BoardInProgress';
-import BoardDone from '../BoardDone/BoardDone';
 import MainBoard from '../MainBoard/MainBoard';
 
 const Board = () => {
@@ -43,7 +40,7 @@ const Board = () => {
 
     return (
         <div className={style.content}>
-            <BoardToDo
+            <MainBoard status="ToDo"
                 arrTextTasks={arrTextTasks} setArrTextTasks={setArrTextTasks}
                 taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive}
                 currentObjTask={currentObjTask} setStatusForTask={setStatusForTask}

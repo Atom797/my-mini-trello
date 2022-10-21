@@ -1,12 +1,10 @@
 import style from './BoardToDo.module.css'
 import plusImg from '../../assets/images/plus.svg'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import TaskWindow from '../TaskWindow/TaskWindow';
 
 
 const BoardToDo = (props) => {
-
-    const [arrTasks, setArrTask] = useState();
 
     const [newTask, setNewTask] = useState();
     const [visibleWindowForNewTasks, setVisibleWindowForNewTasks] = useState(false);
@@ -16,29 +14,10 @@ const BoardToDo = (props) => {
         return (S() + S() + "-" + S() + "-" + S() + "-" + S() + "-" + S() + S() + S());
     }
 
-    useEffect(() => {
-        let arrToDoTasks = props.arrTextTasks.filter(el => el.statusTask === 'ToDo')
-        let arrTasks = arrToDoTasks.map(task =>
-            <div key={task.id} className={style.itemList} >
-                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)}>
-                    <option>Change status</option>
-                    <option value="ToDo">ToDo</option>
-                    <option value="In Progress">In progress</option>
-                    <option value="Done">Done</option>
-                </select>
-                <div className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
-                    <p>{task.newTask}</p>
-                </div>
-
-            </div>
-        )
-        setArrTask(arrTasks);
-    }, [props.arrTextTasks])
-
     return (
         <div className={style.content}>
             <div className={style.header}>
-                ToDo
+                {props.status}
                 <button className={style.plusButton} onClick={() => visibleWindowForNewTasks ? setVisibleWindowForNewTasks(false) : setVisibleWindowForNewTasks(true)}>
                     <img className={style.plusImg} src={plusImg} />
                 </button>
@@ -51,7 +30,7 @@ const BoardToDo = (props) => {
                         Добавить новую задачу
                     </button>
                 </div>
-                {arrTasks}
+                {props.arrTasks}
             </div>
             {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks} />}
 

@@ -11,7 +11,12 @@ const TaskWindow = (props) => {
                     <img className={style.imgClose} src={closeButton} />
                 </button>
             </div>
-            {props.currentObjTask.newTask}
+            <div className={style.nameTask}>
+                {props.currentObjTask.newTask}
+            </div>
+            <div>
+                Описание задачи
+            </div>
         </div>
     )
 }
