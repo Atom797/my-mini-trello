@@ -23,7 +23,6 @@
     flex-flow: column;
 }
 
-
 .itemList{
     display: flex;
     justify-items: center;

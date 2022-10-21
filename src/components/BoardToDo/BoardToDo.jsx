@@ -17,18 +17,19 @@ const BoardToDo = (props) => {
     }
 
     useEffect(() => {
-        let arrToDoTasks = props.arrTextTasks.filter(el => el.statusTask === 'toDo')
+        let arrToDoTasks = props.arrTextTasks.filter(el => el.statusTask === 'ToDo')
         let arrTasks = arrToDoTasks.map(task =>
             <div key={task.id} className={style.itemList} >
-                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)} defaultValue="toDo">
-                    <option value="toDo" disabled>ToDo</option>
-                    <option value="inProgress">In progress</option>
-                    <option value="done">Done</option>
+                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)}>
+                    <option>Change status</option>
+                    <option value="ToDo">ToDo</option>
+                    <option value="In Progress">In progress</option>
+                    <option value="Done">Done</option>
                 </select>
                 <div className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
                     <p>{task.newTask}</p>
                 </div>
-                
+
             </div>
         )
         setArrTask(arrTasks);
@@ -46,13 +47,13 @@ const BoardToDo = (props) => {
                 <div className={style.windowForNewTask} style={{ display: visibleWindowForNewTasks ? "grid" : "none" }}>
                     <textarea className={style.textareaForAddTask} placeholder="Введите название задачи" value={newTask} onChange={e => setNewTask(e.target.value)} />
                     <button className={style.buttonForAddTask}
-                        onClick={() => newTask && props.setArrTextTasks([...props.arrTextTasks, { id: guidGenerator(), newTask, statusTask: "toDo" }])}>
+                        onClick={() => newTask && props.setArrTextTasks([...props.arrTextTasks, { id: guidGenerator(), newTask, statusTask: "ToDo" }])}>
                         Добавить новую задачу
                     </button>
                 </div>
                 {arrTasks}
             </div>
-            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks}/>}
+            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks} />}
 
         </div>
     )

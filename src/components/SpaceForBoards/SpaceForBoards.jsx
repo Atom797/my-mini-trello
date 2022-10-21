@@ -1,15 +1,15 @@
 import BoardToDo from '../BoardToDo/BoardToDo';
-import style from './Board.module.css'
+import style from './SpaceForBoards.module.css'
 import { useEffect, useState } from 'react'
 import BoardInProgress from '../BoardInProgress/BoardInProgress';
 import BoardDone from '../BoardDone/BoardDone';
-
+import MainBoard from '../MainBoard/MainBoard';
 
 const Board = () => {
 
     let arrTask = [];
 
-    if(localStorage.arrTasks){
+    if (localStorage.arrTasks) {
         arrTask = JSON.parse(localStorage.arrTasks)
     }
 
@@ -18,7 +18,7 @@ const Board = () => {
     const [taskWindowActive, setTaskWindowActive] = useState(false);
     const [currentObjTask, setCurrentObjTask] = useState({});
 
-    useEffect(() =>{
+    useEffect(() => {
         localStorage.arrTasks = JSON.stringify(arrTextTasks);
     }, [arrTextTasks])
 
@@ -41,23 +41,23 @@ const Board = () => {
         setTaskWindowActive(true);
     }
 
-    return(
+    return (
         <div className={style.content}>
-            <BoardToDo 
-                arrTextTasks={arrTextTasks} setArrTextTasks={setArrTextTasks} 
-                taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive} 
-                currentObjTask={currentObjTask} setStatusForTask={setStatusForTask} 
-                setTaskWindow={setTaskWindow}/>
-            <BoardInProgress 
+            <BoardToDo
                 arrTextTasks={arrTextTasks} setArrTextTasks={setArrTextTasks}
-                taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive} 
-                currentObjTask={currentObjTask} setStatusForTask={setStatusForTask} 
-                setTaskWindow={setTaskWindow}/>
-            <BoardDone 
+                taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive}
+                currentObjTask={currentObjTask} setStatusForTask={setStatusForTask}
+                setTaskWindow={setTaskWindow} />
+            <MainBoard status="In Progress"
                 arrTextTasks={arrTextTasks} setArrTextTasks={setArrTextTasks}
-                taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive} 
-                currentObjTask={currentObjTask} setStatusForTask={setStatusForTask} 
-                setTaskWindow={setTaskWindow}/>
+                taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive}
+                currentObjTask={currentObjTask} setStatusForTask={setStatusForTask}
+                setTaskWindow={setTaskWindow} />
+            <MainBoard status="Done"
+                arrTextTasks={arrTextTasks} setArrTextTasks={setArrTextTasks}
+                taskWindowActive={taskWindowActive} setTaskWindowActive={setTaskWindowActive}
+                currentObjTask={currentObjTask} setStatusForTask={setStatusForTask}
+                setTaskWindow={setTaskWindow} />
         </div>
     )
 }

@@ -5,22 +5,16 @@ import TaskWindow from '../TaskWindow/TaskWindow';
 
 const BoardInProgress = (props) => {
 
-    const setStatusForTask = (e, id) => {
-        let idCurrentTask = props.arrTextTasks.findIndex(el => el.id === id)
-        let copyArrTextTasks = props.arrTextTasks;
-        copyArrTextTasks[idCurrentTask].statusTask = e.target.value
-        props.setArrTextTasks([...copyArrTextTasks])
-    }
-
     const [arrTasks, setArrTask] = useState();
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log(props.arrTextTasks)
         let arrInProgressTasks = props.arrTextTasks.filter(el => el.statusTask === 'inProgress')
         let arrTasks = arrInProgressTasks.map(task =>
             <div key={task.id} className={style.itemList}>
-                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)} defaultValue="inProgress">
-                    <option value="inProgress" disabled>In progress</option>
+                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)} >
+                    <option>Change status</option>
+                    <option value="inProgress">In progress</option>
                     <option value="toDo">ToDo</option>
                     <option value="done">Done</option>
                 </select>
@@ -32,7 +26,7 @@ const BoardInProgress = (props) => {
         setArrTask(arrTasks);
     }, [props.arrTextTasks])
 
-    
+
 
     return (
         <div className={style.content}>
@@ -42,7 +36,7 @@ const BoardInProgress = (props) => {
             <div className={style.list}>
                 {arrTasks}
             </div>
-            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks}/>}
+            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks} />}
         </div>
     )
 }

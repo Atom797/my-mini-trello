@@ -1,13 +1,13 @@
 import './App.css';
-import Board from './components/Board/Board';
+import SpaceForBoards from './components/SpaceForBoards/SpaceForBoards';
 import Header from './components/Header/Header';
 
 function App() {
   return (
     <div className="app">
-      <Header/>
+      <Header />
       <div className='content'>
-        <Board/>
+        <SpaceForBoards />
       </div>
     </div>
   );
