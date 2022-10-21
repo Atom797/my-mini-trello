@@ -25,9 +25,10 @@
 
 
 .itemList{
-    display: grid;
+    display: flex;
     justify-items: center;
     align-items: center;
+    flex-direction: column;
     background-color: #ffffff;
     width: 80%;
     height: 20%;
@@ -36,11 +37,25 @@
 }
 
 .selectItemList{
+    position: absolute;
+    z-index: 10;
+    align-self: end;
     justify-self: end;
-    margin-right: 10px;
+    margin: 10px;
     height: 20px;
     border-radius: 5px;
     background-color: #ebecf0;
+}
+
+.basicBodyTask{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+
 }
 
 .plusButton{

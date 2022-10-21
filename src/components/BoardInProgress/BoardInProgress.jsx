@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import style from './BoardInProgress.module.css'
+import TaskWindow from '../TaskWindow/TaskWindow';
 
 
 const BoardInProgress = (props) => {
@@ -18,12 +19,14 @@ const BoardInProgress = (props) => {
         let arrInProgressTasks = props.arrTextTasks.filter(el => el.statusTask === 'inProgress')
         let arrTasks = arrInProgressTasks.map(task =>
             <div key={task.id} className={style.itemList}>
-                <select name="select" className={style.selectItemList} onChange={e => setStatusForTask(e, task.id)} defaultValue="inProgress">
+                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)} defaultValue="inProgress">
                     <option value="inProgress" disabled>In progress</option>
                     <option value="toDo">ToDo</option>
                     <option value="done">Done</option>
                 </select>
-                {task.newTask}
+                <div className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
+                    {task.newTask}
+                </div>
             </div>
         )
         setArrTask(arrTasks);
@@ -39,6 +42,7 @@ const BoardInProgress = (props) => {
             <div className={style.list}>
                 {arrTasks}
             </div>
+            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks}/>}
         </div>
     )
 }

@@ -6,9 +6,6 @@ import TaskWindow from '../TaskWindow/TaskWindow';
 
 const BoardToDo = (props) => {
 
-    const [taskWindowActive, setTaskWindowActive] = useState(false);
-    const [currentObjTask, setCurrentObjTask] = useState({});
-
     const [arrTasks, setArrTask] = useState();
 
     const [newTask, setNewTask] = useState();
@@ -19,36 +16,19 @@ const BoardToDo = (props) => {
         return (S() + S() + "-" + S() + "-" + S() + "-" + S() + "-" + S() + S() + S());
     }
 
-    const findCurrentTask = (e, id) => {
-        let idCurrentTask = props.arrTextTasks.findIndex(el => el.id === id)
-        let copyArrTextTasks = props.arrTextTasks;
-        return [copyArrTextTasks, idCurrentTask];
-    }
-
-
-    const setStatusForTask = (e, id) => {
-        let [copyArrTextTasks, idCurrentTask] = findCurrentTask(e, id);
-        copyArrTextTasks[idCurrentTask].statusTask = e.target.value;
-        props.setArrTextTasks([...copyArrTextTasks]);
-    }
-
-    const setTaskWindow = (e, id) => {
-        let [copyArrTextTasks, idCurrentTask] = findCurrentTask(e, id);
-        setCurrentObjTask(copyArrTextTasks[idCurrentTask]);
-        setTaskWindowActive(true);
-    }
-
     useEffect(() => {
-        console.log(props.arrTextTasks)
         let arrToDoTasks = props.arrTextTasks.filter(el => el.statusTask === 'toDo')
         let arrTasks = arrToDoTasks.map(task =>
-            <div key={task.id} className={style.itemList} onClick={(e) => { setTaskWindow(e, task.id) }}>
-                <select name="select" className={style.selectItemList} onChange={e => setStatusForTask(e, task.id)} defaultValue="toDo">
+            <div key={task.id} className={style.itemList} >
+                <select name="select" className={style.selectItemList} onChange={e => props.setStatusForTask(e, task.id)} defaultValue="toDo">
                     <option value="toDo" disabled>ToDo</option>
                     <option value="inProgress">In progress</option>
                     <option value="done">Done</option>
                 </select>
-                {task.newTask}
+                <div className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
+                    <p>{task.newTask}</p>
+                </div>
+                
             </div>
         )
         setArrTask(arrTasks);
@@ -72,7 +52,7 @@ const BoardToDo = (props) => {
                 </div>
                 {arrTasks}
             </div>
-            {taskWindowActive && <TaskWindow active={taskWindowActive} setActive={setTaskWindowActive} currentObjTask={currentObjTask} />}
+            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks}/>}
 
         </div>
     )

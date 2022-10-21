@@ -1,7 +1,7 @@
 .app {
   display: grid;
   background: white;
-  grid-template-rows: 50px 1000px;
+  grid-template-rows: 5vh 95vh;
 }
 
 .content{

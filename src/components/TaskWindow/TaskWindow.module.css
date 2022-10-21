@@ -17,7 +17,7 @@
 .modalContent {
     padding: 20px;
     border-radius: 12px;
-    background-color: white;
+    background-color: #ebecf0;
     width: 50vw;
     height: 70vh;
     transform: scale(1);
@@ -26,7 +26,7 @@
 
 .buttonClose { 
     float: right;
-    background-color: white;
+    background-color: #ebecf0;
     border: 0;
     width: 40px;
 }
