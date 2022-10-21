@@ -20,7 +20,7 @@ const MainBoard = (props) => {
           {!(props.status === "Done") && <option value="Done">Done</option>}
         </select>
         <div className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
-          {task.newTask}
+          <div className={style.nameTask}>{task.newTask}</div>
         </div>
       </div >
     )

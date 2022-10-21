@@ -35,3 +35,41 @@
     width: 100%;
     height: 100%;
 }
+
+.nameTask {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.description{
+    margin-top: 2%;
+}
+
+.addDescription{
+    display: flex;
+    align-items: center;
+}
+
+.plusButton {
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 1%;
+    padding: 0;
+}
+
+.plusButton:hover {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.plusButton:active {
+    border: 1px solid rgb(0, 4, 255);
+}
+
+.plusImg {
+    height: 100%;
+    width: 100%;
+}

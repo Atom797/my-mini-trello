@@ -5,7 +5,7 @@
   align-self: center;
   grid-template-rows: 40px 1fr;
   width: 50%;
-  height: 70%;
+  height: 70vh;
   border-radius: 5px;
 }
 
@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   flex-flow: column;
+  overflow-y: auto;
 }
 
 .itemList {
@@ -36,8 +37,6 @@
 }
 
 .selectItemList {
-  position: absolute;
-  z-index: 10;
   align-self: end;
   justify-self: end;
   margin: 10px;
@@ -48,11 +47,19 @@
 
 .basicBodyTask {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.nameTask{
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 70%;
   word-wrap: break-word;
   word-break: break-all;
-
 }

@@ -1,62 +1,3 @@
-.content{
-    display: grid;
-    background-color: #ebecf0;
-    justify-self: center;
-    align-self: center;
-    grid-template-rows: 40px 1fr;
-    width: 50%;
-    height: 70%;
-    border-radius: 5px;
-}
-
-.header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 1%;
-    border-bottom: 1px solid rgb(216, 215, 215);
-}
-
-.list{
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-}
-
-.itemList{
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
-    width: 80%;
-    height: 20%;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.selectItemList{
-    position: absolute;
-    z-index: 10;
-    align-self: end;
-    justify-self: end;
-    margin: 10px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: #ebecf0;
-}
-
-.basicBodyTask{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    word-wrap: break-word;
-    word-break: break-all;
-
-}
-
 .plusButton{
     width: 20px;
     height: 20px;
@@ -87,7 +28,7 @@
     align-items: center;
     width: 80%;
     height: 20%;
-    margin: 10px;
+    margin-bottom: 55px;
     border-radius: 5px;
 }
 

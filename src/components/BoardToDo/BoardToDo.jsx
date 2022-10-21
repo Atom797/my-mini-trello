@@ -1,4 +1,5 @@
-import style from './BoardToDo.module.css'
+import styleBoardToDo from './BoardToDo.module.css'
+import style from '../MainBoard/MainBoard.module.css'
 import plusImg from '../../assets/images/plus.svg'
 import { useState } from 'react'
 import TaskWindow from '../TaskWindow/TaskWindow';
@@ -18,18 +19,19 @@ const BoardToDo = (props) => {
         <div className={style.content}>
             <div className={style.header}>
                 {props.status}
-                <button className={style.plusButton} onClick={() => visibleWindowForNewTasks ? setVisibleWindowForNewTasks(false) : setVisibleWindowForNewTasks(true)}>
-                    <img className={style.plusImg} src={plusImg} />
+                <button className={styleBoardToDo.plusButton} onClick={() => visibleWindowForNewTasks ? setVisibleWindowForNewTasks(false) : setVisibleWindowForNewTasks(true)}>
+                    <img className={styleBoardToDo.plusImg} src={plusImg} />
                 </button>
             </div>
             <div className={style.list}>
-                <div className={style.windowForNewTask} style={{ display: visibleWindowForNewTasks ? "grid" : "none" }}>
-                    <textarea className={style.textareaForAddTask} placeholder="Введите название задачи" value={newTask} onChange={e => setNewTask(e.target.value)} />
-                    <button className={style.buttonForAddTask}
-                        onClick={() => newTask && props.setArrTextTasks([...props.arrTextTasks, { id: guidGenerator(), newTask, statusTask: "ToDo" }])}>
-                        Добавить новую задачу
-                    </button>
-                </div>
+                {visibleWindowForNewTasks &&
+                    <div className={styleBoardToDo.windowForNewTask}>
+                        <textarea className={styleBoardToDo.textareaForAddTask} placeholder="Введите название задачи" value={newTask} onChange={e => setNewTask(e.target.value)} />
+                        <button className={styleBoardToDo.buttonForAddTask}
+                            onClick={() => newTask && props.setArrTextTasks([...props.arrTextTasks, { id: guidGenerator(), newTask, statusTask: "ToDo" }])}>
+                            Добавить новую задачу
+                        </button>
+                    </div>}
                 {props.arrTasks}
             </div>
             {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks} />}
