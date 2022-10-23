@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/my-mini-trello/static/css/main.9936f20d.css",
-    "main.js": "/my-mini-trello/static/js/main.5dbf0f3b.js",
+    "main.css": "/my-mini-trello/static/css/main.a5286a1c.css",
+    "main.js": "/my-mini-trello/static/js/main.636af557.js",
     "static/js/787.8ea5a97a.chunk.js": "/my-mini-trello/static/js/787.8ea5a97a.chunk.js",
     "static/media/iconTrello.png": "/my-mini-trello/static/media/iconTrello.a29f043bce30506aac93.png",
     "static/media/backgroundImg.jpg": "/my-mini-trello/static/media/backgroundImg.0fd22521b44695a267cd.jpg",
     "index.html": "/my-mini-trello/index.html",
     "static/media/close.svg": "/my-mini-trello/static/media/close.85f9f2a1f603d5a966a44474678a7981.svg",
     "static/media/plus.svg": "/my-mini-trello/static/media/plus.5e21677fab6dd6aa113b48228e6b020f.svg",
-    "main.9936f20d.css.map": "/my-mini-trello/static/css/main.9936f20d.css.map",
-    "main.5dbf0f3b.js.map": "/my-mini-trello/static/js/main.5dbf0f3b.js.map",
+    "main.a5286a1c.css.map": "/my-mini-trello/static/css/main.a5286a1c.css.map",
+    "main.636af557.js.map": "/my-mini-trello/static/js/main.636af557.js.map",
     "787.8ea5a97a.chunk.js.map": "/my-mini-trello/static/js/787.8ea5a97a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9936f20d.css",
-    "static/js/main.5dbf0f3b.js"
+    "static/css/main.a5286a1c.css",
+    "static/js/main.636af557.js"
   ]
 }
