@@ -1,15 +1,18 @@
 import './App.css';
 import SpaceForBoards from './components/SpaceForBoards/SpaceForBoards';
 import Header from './components/Header/Header';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <div className='content'>
-        <SpaceForBoards />
+    <BrowserRouter>
+      <div className="app">
+        <Header />
+        <div className='content'>
+          <SpaceForBoards />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

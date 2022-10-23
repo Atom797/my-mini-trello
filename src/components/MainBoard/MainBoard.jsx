@@ -2,6 +2,7 @@ import style from './MainBoard.module.css';
 import TaskWindow from '../TaskWindow/TaskWindow';
 import { useState, useEffect } from 'react'
 import BoardToDo from '../BoardToDo/BoardToDo';
+import { NavLink } from 'react-router-dom';
 
 
 const MainBoard = (props) => {
@@ -19,13 +20,13 @@ const MainBoard = (props) => {
           {!(props.status === "In Progress") && <option value="In Progress">In progress</option>}
           {!(props.status === "Done") && <option value="Done">Done</option>}
         </select>
-        <div className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
+        <NavLink to={'/task/' + task.id} className={style.basicBodyTask} onClick={() => { props.setTaskWindow(task.id) }}>
           <div className={style.nameTask}>{task.newTask}</div>
-        </div>
+        </NavLink>
       </div >
     )
     setArrTask(arrTasks);
-  }, [props.arrTextTasks])
+  }, [props.arrTextTasks, props.currentObjTask])
 
   if (props.status === "ToDo") {
     return (
@@ -48,7 +49,9 @@ const MainBoard = (props) => {
         <TaskWindow
           setActive={props.setTaskWindowActive}
           currentObjTask={props.currentObjTask}
-          arrTextTasks={props.arrTextTasks} />}
+          arrTextTasks={props.arrTextTasks}
+          setArrTextTasks={props.setArrTextTasks} />
+      }
     </div>
   )
 }

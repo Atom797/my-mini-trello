@@ -34,7 +34,12 @@ const BoardToDo = (props) => {
                     </div>}
                 {props.arrTasks}
             </div>
-            {props.taskWindowActive && <TaskWindow setActive={props.setTaskWindowActive} currentObjTask={props.currentObjTask} arrTextTasks={props.arrTextTasks} />}
+            {props.taskWindowActive &&
+                <TaskWindow
+                    setActive={props.setTaskWindowActive}
+                    currentObjTask={props.currentObjTask}
+                    arrTextTasks={props.arrTextTasks}
+                    setArrTextTasks={props.setArrTextTasks} />}
 
         </div>
     )

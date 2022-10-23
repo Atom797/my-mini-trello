@@ -73,3 +73,28 @@
     height: 100%;
     width: 100%;
 }
+
+.windowForAddDescription {
+    align-items: center;
+    width: 80%;
+    height: 20%;
+    margin-top: 5%;
+    margin-bottom: 55px;
+    border-radius: 5px;
+}
+
+.buttonForAddDescription {
+    align-content: center;
+    margin-left: 10px;
+    background-color: #0079bf;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.textareaForAddDescription {
+    height: 70px;
+    width: 90%;
+    margin-left: 10px;
+    border-radius: 5px;
+}

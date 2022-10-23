@@ -2,7 +2,8 @@ import style from './SpaceForBoards.module.css'
 import { useEffect, useState } from 'react'
 import MainBoard from '../MainBoard/MainBoard';
 
-const Board = () => {
+
+const SpaceForBoards = () => {
 
     let arrTask = [];
 
@@ -17,7 +18,7 @@ const Board = () => {
 
     useEffect(() => {
         localStorage.arrTasks = JSON.stringify(arrTextTasks);
-    }, [arrTextTasks])
+    }, [arrTextTasks, localStorage.arrTasks])
 
     const findCurrentTask = (id) => {
         let idCurrentTask = arrTextTasks.findIndex(el => el.id === id)
@@ -59,4 +60,4 @@ const Board = () => {
     )
 }
 
-export default Board;
+export default SpaceForBoards;
