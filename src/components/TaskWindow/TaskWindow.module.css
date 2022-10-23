@@ -98,3 +98,19 @@
     margin-left: 10px;
     border-radius: 5px;
 }
+
+.buttonDeleteTask{
+    align-content: center;
+    margin-left: 10px;
+    background-color: #0079bf;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.deleteBtn {
+    display: flex;
+    height: 90%;
+    align-items: end;
+    justify-content: flex-end;
+}

@@ -17,12 +17,19 @@ const TaskWindow = (props) => {
         props.setArrTextTasks([...copyArrTextTasks]);
     }
 
+    const deleteTask = () => {
+        let copyArrTextTasks = props.arrTextTasks.filter(el => el.id != props.currentObjTask.id);
+        props.setArrTextTasks([...copyArrTextTasks]);
+        props.setActive(false);
+        navigate(-1);
+    }
+
     return (
         <Routes>
             <Route path="/task/:id" element={
                 <div className={style.modal}>
                     <div className={style.modalContent}>
-                        <button className={style.buttonClose} onClick={() => { props.setActive(false); navigate(-1) }}>
+                        <button className={style.buttonClose} onClick={() => { props.setActive(false);  navigate(-1)}}>
                             <img className={style.imgClose} src={closeButton} />
                         </button>
                         <div className={style.nameTask}>
@@ -49,6 +56,11 @@ const TaskWindow = (props) => {
                                 }
                             </>
                         }
+                        <div className={style.deleteBtn}>
+                            <button className={style.buttonDeleteTask} onClick={() => { deleteTask() }}>
+                                Удалить задачу
+                            </button>
+                        </div>
                     </div>
 
                 </div>
