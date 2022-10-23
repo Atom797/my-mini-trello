@@ -11,6 +11,17 @@ const SpaceForBoards = () => {
         arrTask = JSON.parse(localStorage.arrTasks)
     }
 
+    useEffect(() => {
+        function handleStorageChange() {
+            if (localStorage.arrTasks) {
+            setArrTextTasks(JSON.parse(localStorage.arrTasks))
+            }
+        }
+        window.addEventListener('storage', handleStorageChange);
+        
+        return () => window.removeEventListener('storage', handleStorageChange)
+        }, [])
+
     const [arrTextTasks, setArrTextTasks] = useState(arrTask || []);
 
     const [taskWindowActive, setTaskWindowActive] = useState(false);

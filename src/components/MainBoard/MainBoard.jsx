@@ -10,7 +10,6 @@ const MainBoard = (props) => {
   const [arrTasks, setArrTask] = useState();
 
   useEffect(() => {
-    console.log(props.arrTextTasks)
     let arrNecessaryTasks = props.arrTextTasks.filter(el => el.statusTask === props.status)
     let arrTasks = arrNecessaryTasks.map(task =>
       <div key={task.id} className={style.itemList}>
